@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import SearchFlickr from './SearchFlickr'
 
 class App extends Component {
@@ -8,8 +8,8 @@ class App extends Component {
         <h2>HumanCode Challenge</h2>
         <SearchFlickr />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

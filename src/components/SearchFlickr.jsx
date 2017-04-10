@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import axios from 'axios'
 
 import FlickrList from './FlickrList'
@@ -26,13 +26,13 @@ class SearchFlickr extends Component {
 
   render() {
     const { photos } = this.state
+
     return (
       <div className="SearchFlickr">
         <input className='search-flickr'
           type='text'
           placeholder='enter a keyword, then press enter'
           onKeyUp={(e) => this.handleSubmit(e)}/>
-
           {photos ?
             <FlickrList
               photos={photos}
@@ -40,8 +40,8 @@ class SearchFlickr extends Component {
             : null
           }
       </div>
-    );
+    )
   }
 }
 
-export default SearchFlickr;
+export default SearchFlickr

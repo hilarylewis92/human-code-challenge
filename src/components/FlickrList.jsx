@@ -1,21 +1,34 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Modal from 'boron/DropModal'
 
 import DetailScreen from './DetailScreen'
 
 class FlickrList extends Component {
-  showDetailModal(){
-    this.refs.modal.showModal();
+  constructor() {
+    super()
+      this.state = {
+        currentIndex: 0,
+      }
+    }
+
+  showDetailModal(i){
+    this.setState ({
+      currentIndex: i
+    })
+    this.refs.modal.showModal()
   }
 
   render() {
+    const { currentIndex } = this.state
     const { photos } = this.props
-    const photo = photos.map(photo => {
+
+    const photo = photos.map((photo, i) => {
       return (
         <li className='photo-list-item'
           key={photo.id}
-          onClick={() => this.showDetailModal()}>
-          <h2>{photo.title}</h2>
+          id={i}
+          onClick={() => this.showDetailModal(i)}>
+          <h3>{photo.title}</h3>
           <img
             src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_t.jpg`}
           />
@@ -25,14 +38,15 @@ class FlickrList extends Component {
 
     return (
       <div className="FlickrList">
-        <h2>List</h2>
         <ul>{photo}</ul>
         <DetailScreen
           ref='modal'
+          i={currentIndex}
+          photos={photos}
         />
       </div>
-    );
+    )
   }
 }
 
-export default FlickrList;
+export default FlickrList
