@@ -9,7 +9,7 @@ class FlickrList extends Component {
           key={photo.id}>
           <h2>{photo.title}</h2>
           <img
-            src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
+            src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_t.jpg`}
           />
         </li>
       )
@@ -25,6 +25,3 @@ class FlickrList extends Component {
 }
 
 export default FlickrList;
-
-
-// <img src=`https://farm{photo.farm}.staticflickr.com/{photo.server}/{photo.id}_{photo.secret}.jpg`/>
