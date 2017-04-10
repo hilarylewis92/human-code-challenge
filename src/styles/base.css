@@ -1,0 +1,28 @@
+/*general styles*/
+html {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin: 10px;
+}
+
+.modal {
+  padding: 30px;
+}
+
+input {
+  padding: 10px;
+  width: 20vw;
+}
+
+li {
+  margin: 10px;
+}
+/*header*/
+
+/*nav*/
+
+/*content*/
+
+/*footer*/
+
+/*responsive*/
