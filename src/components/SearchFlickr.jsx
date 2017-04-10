@@ -13,7 +13,7 @@ class SearchFlickr extends Component {
 
   handleSubmit(e) {
     if(e.keyCode === 13) {
-      axios.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f756f0c479cd4f73ea7a0b361c580cab&format=rest&tags=yokota+air+base&safe_search=1&per_page=20&format=json&nojsoncallback=true')
+      axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f756f0c479cd4f73ea7a0b361c580cab&format=rest&tags=${e.target.value}&per_page=20&format=json&nojsoncallback=true`)
       .then(res => {
         const photos = res.data.photos.photo
         this.setState({
